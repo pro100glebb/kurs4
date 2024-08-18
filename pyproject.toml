@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "Курсовая №4"
+version = "0.1.0"
+description = "Парсер вакансий с hh.ru"
+authors = ["Gleb Kozin <glebkozin7@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+poetry
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
