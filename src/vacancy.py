@@ -6,10 +6,10 @@ class Vacancy():
         self.name = self.__validation_data(name)
         self.area = self.__validation_data(area)
         self.salary = salary
-        self.url = url
-        self.snippet = snippet
+        self.url = self.__validation_data(url)
+        self.snippet = self.__validation_data(snippet)
 
-    def __str__(self):
+    def __repr__(self):
         return (f"{self.name}\n"
                 f"Город: {self.area}\n"
                 f"Зарплата: {self.salary if self.salary else "Не указана"}\n"
@@ -30,16 +30,19 @@ class Vacancy():
     @staticmethod
     def __validation_data(data):
         if data:
-            return data
+             return data
         else:
-            return "Отсутствует"
+             return "Отсутствует"
 
     @classmethod
     def new_vacancy(cls, vacancy):
         name = vacancy.get("name")
         area = vacancy.get("area").get("name")
         if vacancy.get("salary"):
-            salary = vacancy.get("salary").get("from")
+            if vacancy.get("salary").get("from"):
+                salary = vacancy.get("salary").get("from")
+            else:
+                salary = 0
         else:
             salary = 0
         url = vacancy.get("url")
