@@ -2,12 +2,12 @@ import json
 
 class Vacancy():
     """Класс для работы с вакансиями"""
-    def __init__(self, name: str, area: str, salary: int, url: str, snippet: str):
+    def __init__(self, name: str, area: str, url: str, snippet: str, salary: int):
         self.name = self.__validation_data(name)
         self.area = self.__validation_data(area)
-        self.salary = salary
         self.url = self.__validation_data(url)
         self.snippet = self.__validation_data(snippet)
+        self.salary = salary
 
     def __repr__(self):
         return (f"{self.name}\n"
@@ -39,7 +39,7 @@ class Vacancy():
         name = vacancy.get("name")
         area = vacancy.get("area").get("name")
         if vacancy.get("salary"):
-            if vacancy.get("salary").get("from"):
+            if vacancy.get("salary").get("from", 0):
                 salary = vacancy.get("salary").get("from")
             else:
                 salary = 0

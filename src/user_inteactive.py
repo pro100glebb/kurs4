@@ -1,10 +1,12 @@
+from typing import Any
 
 from src.Parser import HH
 from src.vacancy import Vacancy
 
 
-class UserInteractive:
+class UserInteractive():
     """Класс для взаимодействия с пользователем"""
+
     def __init__(self, user_name):
         self.user_name = user_name
         self.vacancies_list = []
@@ -14,9 +16,7 @@ class UserInteractive:
         hh = HH(keyword)
         return hh.load_vacancies()
 
-
-    def get_top_salary(self):
-        n = int(input("Введите топ: "))
+    def get_top_salary(self, n: int):
         sort_by_salary = list(sorted(self.vacancies_list, key=lambda x: x.salary, reverse=True))
         return sort_by_salary[:n]
 
