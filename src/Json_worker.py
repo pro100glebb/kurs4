@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 
 
 class FileWork(ABC):
+    """Класс для работы с файлом"""
 
     @abstractmethod
     def read_file(self):
