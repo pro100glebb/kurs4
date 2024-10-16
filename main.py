@@ -26,16 +26,4 @@ if __name__ == "__main__":
         print("Удачного поиска!")
 
     user_intaraction()
-    #
-    # n = int(input("Введите топ: "))
-    # user.get_top_salary(n)
-    #
-    # for vacancy in user.get_vacancies_list(keyword):
-    #     vac = Vacancy.new_vacancy(vacancy)
-    #     print(vac)
-    #     print()
-    #     user.vacancies_list.append(vac)
-    #
-    # for vacancy in user.get_vacancy_from_keyword():
-    #     print(vacancy)
-    #     print()
+
