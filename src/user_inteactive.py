@@ -16,7 +16,9 @@ class UserInteractive():
         hh = HH(keyword)
         return hh.load_vacancies()
 
-    def get_top_salary(self, n: int):
+    def get_top_salary(self):
+        n = int(input("Введите количество вакансий для вывода в топ N: "))
+
         sort_by_salary = list(sorted(self.vacancies_list, key=lambda x: x.salary, reverse=True))
         return sort_by_salary[:n]
 
@@ -26,5 +28,4 @@ class UserInteractive():
         for vacancy in self.vacancies_list:
             if vacancy.name.find(keywords) != -1:
                 res.append(vacancy)
-
         return res

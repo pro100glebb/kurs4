@@ -38,16 +38,16 @@ class Vacancy():
     def new_vacancy(cls, vacancy):
         name = vacancy.get("name")
         area = vacancy.get("area").get("name")
+        url = vacancy.get("url")
+        snippet = vacancy.get("snippet").get("requirement")
         if vacancy.get("salary"):
-            if vacancy.get("salary").get("from", 0):
+            if vacancy.get("salary").get("from"):
                 salary = vacancy.get("salary").get("from")
             else:
                 salary = 0
         else:
             salary = 0
-        url = vacancy.get("url")
-        snippet = vacancy.get("snippet").get("requirement")
-        return cls(name, area, salary, url, snippet)
+        return cls(name, area, url, snippet, salary)
 
 
 

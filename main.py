@@ -14,12 +14,16 @@ if __name__ == "__main__":
 
         for vacancy in user.get_vacancies_list(keyword):
             vac = Vacancy.new_vacancy(vacancy)
-            print(vac)
             user.vacancies_list.append(vac)
+            print(vac)
 
-        n = int(input("Введите количество вакансий для вывода в топ N: "))
-        user.get_top_salary(n)
+        for vacancy in user.get_top_salary():
+            print(vacancy)
 
+        for vacancy in user.get_vacancy_from_keyword():
+            print(vacancy)
+
+        print("Удачного поиска!")
 
     user_intaraction()
     #
