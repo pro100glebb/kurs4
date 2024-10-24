@@ -17,15 +17,15 @@ class Vacancy():
                 f"Сниппет: {self.snippet}\n")
 
     def __lt__(self, other):
-        if not self.salary:
-            return "Зарплата не указана в первой вакансии"
-        elif not other.salary:
-            return "Зарплата не указана во второй вакансии"
-        elif self.salary < other.salary:
-            return True
-        else:
-            return False
-
+        """Метод сравнения вакансий по ЗП"""
+        try:
+            if self.salary < other.salary:
+                return True
+            else:
+                return False
+        except AttributeError:
+            print("Зарплата не указана")
+            raise
 
     @staticmethod
     def __validation_data(data):
@@ -36,6 +36,7 @@ class Vacancy():
 
     @classmethod
     def new_vacancy(cls, vacancy):
+        """Метод достает нужную нам информацию о вакансии из json"""
         name = vacancy.get("name")
         area = vacancy.get("area").get("name")
         url = vacancy.get("url")

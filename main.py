@@ -17,6 +17,9 @@ if __name__ == "__main__":
             user.vacancies_list.append(vac)
             print(vac)
 
+        user.save_to_file()
+
+
         for vacancy in user.get_top_salary():
             print(vacancy)
 
