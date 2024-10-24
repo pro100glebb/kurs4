@@ -13,7 +13,7 @@ def test():
 
 
 def test_get_top_salary(test):
-    assert UserInteractive.get_top_salary(test, 0) == []
+    assert test.get_top_salary(0) == []
 
 def test_get_top_salary_3(test):
-    assert UserInteractive.get_top_salary(test, 1)[0].salary == 9000
+    assert test.get_top_salary(1)[0].salary == 9000
