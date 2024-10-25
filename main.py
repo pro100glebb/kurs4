@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
         user.save_to_file()
 
-
-        for vacancy in user.get_top_salary():
+        n = int(input("Введите количество вакансий для вывода в топ N: "))
+        for vacancy in user.get_top_salary(n):
             print(vacancy)
 
         for vacancy in user.get_vacancy_from_keyword():

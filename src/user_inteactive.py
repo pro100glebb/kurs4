@@ -17,9 +17,9 @@ class UserInteractive():
         hh = HH(keyword)
         return hh.load_vacancies()
 
-    def get_top_salary(self):
+    def get_top_salary(self, n):
         """Метод сортирует вакансии по ЗП"""
-        n = int(input("Введите количество вакансий для вывода в топ N: "))
+        # n = int(input("Введите количество вакансий для вывода в топ N: "))
 
         sort_by_salary = list(sorted(self.vacancies_list, key=lambda x: x.salary, reverse=True))
         return sort_by_salary[:n]
