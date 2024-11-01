@@ -17,3 +17,9 @@ def test_get_top_salary(test):
 
 def test_get_top_salary_3(test):
     assert test.get_top_salary(1)[0].salary == 9000
+
+def test_get_vacancy_from_keyword(test):
+    assert test.get_vacancy_from_keyword("ABC") == []
+
+def test_get_vacancy_from_keyword_1(test):
+    assert len(test.get_vacancy_from_keyword("testname")) == 10

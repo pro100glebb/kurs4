@@ -24,9 +24,8 @@ class UserInteractive():
         sort_by_salary = list(sorted(self.vacancies_list, key=lambda x: x.salary, reverse=True))
         return sort_by_salary[:n]
 
-    def get_vacancy_from_keyword(self):
+    def get_vacancy_from_keyword(self, keywords):
         """Метод для фильтрации вакансий по ключеваому слову"""
-        keywords = input("Введите ключевые слова: ")
         res = []
         for vacancy in self.vacancies_list:
             if vacancy.name.find(keywords) != -1:
