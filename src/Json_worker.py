@@ -25,14 +25,14 @@ class WorkWithJson(FileWork):
 
     def read_file(self):
         """Метод для чтения файла"""
-        with open(self._abs_path, "r") as file:
+        with open(self._abs_path, "r", encoding="utf-8") as file:
             return json.load(file)
 
     def save_file(self, data):
         """Метод для сохранение файла"""
-        with open(self._abs_path, "w") as file:
+        with open(self._abs_path, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
     def delite_file(self):
-        with open(self._abs_path, "w") as file:
+        with open(self._abs_path, "w", encoding="utf-8") as file:
             json.dump([], file, ensure_ascii=False, indent=4)
